@@ -1,13 +1,7 @@
-#!/usr/bin/env node
-
 import { rate, Rating } from 'ts-trueskill';
-import * as csvParser from 'csv-parse';
+import csvParser from 'csv-parse';
 
-const scores = process.argv[2];
-
-if (!scores) throw Error('No scores provided!');
-
-csvParser(scores, {
+export const rateScores = (scores: string) => csvParser(scores, {
     comment: '#',
     delimiter: '\t',
 }, (err, rows: string[][]) => {
@@ -28,5 +22,5 @@ csvParser(scores, {
 
     const playerRatings: { name: string, rating: Rating[] }[] = Object.keys(playersRatingsStore).map(player => ({ name: player, rating: playersRatingsStore[player] }));
     const sortedPlayerRatings = playerRatings.sort((a, b) => a.rating[0].mu > b.rating[0].mu ? -1 : 1 );
-    sortedPlayerRatings.forEach(player => console.log(`${player.name}: ${player.rating.toString()}`));
+    sortedPlayerRatings.forEach((player, index) => console.log(`[${index + 1}] ${player.name.padEnd(10)} ${player.rating.toString()}`));
 });

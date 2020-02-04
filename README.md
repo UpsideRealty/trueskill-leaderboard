@@ -1,6 +1,6 @@
 # trueskill-leaderboard
 
-Usage:
+## Usage
 
 1. `npm install -g git+ssh://git@github.com:UpsideRealty/trueskill-leaderboard.git`
 
@@ -11,9 +11,15 @@ Usage:
     rate "Cookie      Michal  Matt    Kevin
     Matt    Cookie  Nick    Michal
     Matt    Kevin   Nick    Cookie"
+   
+   [1] Kevin      Rating(mu=30.193, sigma=2.876)
+   [2] Cookie     Rating(mu=29.049, sigma=2.893)
+   [3] Matt       Rating(mu=25.784, sigma=2.978)
+   [4] Nick       Rating(mu=25.099, sigma=2.632)
+   [5] Michal     Rating(mu=18.112, sigma=3.687)
     ``` 
 
-Development:
+## Development
 
 1. `npm install` to install dependencies.
 

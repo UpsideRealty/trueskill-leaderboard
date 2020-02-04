@@ -30,5 +30,5 @@ exports.rateScores = function (scores) { return csv_parse_1.default(scores, {
     });
     var playerRatings = Object.keys(playersRatingsStore).map(function (player) { return ({ name: player, rating: playersRatingsStore[player] }); });
     var sortedPlayerRatings = playerRatings.sort(function (a, b) { return a.rating[0].mu > b.rating[0].mu ? -1 : 1; });
-    sortedPlayerRatings.forEach(function (player) { return console.log(player.name + ": " + player.rating.toString()); });
+    sortedPlayerRatings.forEach(function (player, index) { return console.log("[" + (index + 1) + "] " + player.name.padEnd(10) + " " + player.rating.toString()); });
 }); };
